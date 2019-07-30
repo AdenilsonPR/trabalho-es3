@@ -1,0 +1,82 @@
+DROP TABLE tb_cartao;
+DROP TABLE tb_endereco;
+DROP TABLE tb_login;
+DROP TABLE tb_telefone;
+DROP TABLE tb_cliente;
+
+CREATE TABLE tb_cliente(	
+	cli_id SERIAL NOT NULL,
+	cli_dataCadastro  TIMESTAMP NOT NULL,
+	cli_status CHARACTER VARYING(8) NOT NULL,
+	cli_nome  CHARACTER VARYING(30) NOT NULL,
+	cli_dataNAscimento  CHARACTER VARYING(10) NOT NULL,
+	cli_genero CHARACTER VARYING(9) NOT NULL,
+	cli_cpf  CHARACTER VARYING(14) NOT NULL,
+	cli_rank  INTEGER NOT NULL,
+
+	CONSTRAINT tb_cliente_pk PRIMARY KEY (cli_id)
+	
+);
+
+CREATE TABLE tb_login(
+	lgn_id SERIAL NOT NULL,
+	lgn_status CHARACTER VARYING(8) NOT NULL,
+	lgn_email CHARACTER VARYING(50) NOT NULL,
+	lgn_senha CHARACTER VARYING(50) NOT NULL,
+	lgn_cli_id INTEGER NOT NULL,
+
+	CONSTRAINT tb_login_pk PRIMARY KEY (lgn_id),
+	CONSTRAINT lgn_cli_fk FOREIGN KEY (lgn_cli_id) REFERENCES tb_cliente (cli_id)
+	
+);
+
+CREATE TABLE tb_telefone(
+	tel_id SERIAL NOT NULL,
+	tel_status CHARACTER VARYING(8) NOT NULL,
+	tel_tipo CHARACTER VARYING(8),
+	tel_ddd CHARACTER VARYING(2) NOT NULL,
+	tel_numero CHARACTER VARYING(10) NOT NULL,
+	tel_cli_id INTEGER NOT NULL,
+
+	CONSTRAINT tb_telefone_pk PRIMARY KEY (tel_id),
+	CONSTRAINT tel_cli_fk FOREIGN KEY (tel_cli_id) REFERENCES tb_cliente (cli_id)
+);
+
+CREATE TABLE tb_endereco(	
+	end_id SERIAL NOT NULL,
+	end_status CHARACTER VARYING(8) NOT NULL,
+	end_tipo CHARACTER VARYING(30),
+	end_cobranca CHARACTER VARYING(3) NOT NULL,
+	end_entrega CHARACTER VARYING(3) NOT NULL,	
+	end_logradouro CHARACTER VARYING(30) NOT NULL,
+	end_tipoLogradouro CHARACTER VARYING(30) NOT NULL,
+	end_numero CHARACTER VARYING(10) NOT NULL,
+	end_bairro CHARACTER VARYING(30) NOT NULL,
+	end_cep CHARACTER VARYING(9) NOT NULL,
+	end_cidade CHARACTER VARYING(30) NOT NULL,
+	end_estado  CHARACTER VARYING(30) NOT NULL,
+	end_pais CHARACTER VARYING(30) NOT NULL,	
+	end_cli_id INTEGER NOT NULL,
+
+	CONSTRAINT tb_endereco_pk PRIMARY KEY (end_id),
+	CONSTRAINT end_cli_fk FOREIGN KEY (end_cli_id) REFERENCES tb_cliente (cli_id)
+
+);
+
+CREATE TABLE tb_cartao(	
+	car_id SERIAL NOT NULL,
+	car_status CHARACTER VARYING(8) NOT NULL,
+	car_bandeira CHARACTER VARYING(30) NOT NULL,
+	car_preferencial CHARACTER VARYING(3) NOT NULL,
+	car_cli_id INTEGER NOT NULL,
+	car_numero CHARACTER VARYING(19) NOT NULL,
+	car_nomeImpresso CHARACTER VARYING(30) NOT NULL,
+	car_codSeg CHARACTER VARYING(3) NOT NULL,
+	car_validade CHARACTER VARYING(5) NOT NULL,
+
+	CONSTRAINT tb_cartao_pk PRIMARY KEY (car_id),
+	CONSTRAINT car_cli_fk FOREIGN KEY (car_cli_id) REFERENCES tb_cliente (cli_id)
+);
+	
+
+

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+    <servlet>
+        <servlet-name>Controle</servlet-name>
+        <servlet-class>web.controle.impl.Controle</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/Controle</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/AlterarCartao</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/AlterarCliente</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/AlterarEndereco</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/AlterarLogin</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/AlterarTelefone</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ConsultarCartao</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ConsultarCliente</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ConsultarEndereco</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ConsultarLogin</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ConsultarTelefone</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/SalvarCartao</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/SalvarCliente</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/SalvarEndereco</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/SalvarLogin</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/SalvarTelefone</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ExcluirCartao</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ExcluirCliente</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ExcluirEndereco</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ExcluirLogin</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ExcluirTelefone</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Controle</servlet-name>
+        <url-pattern>/ListarCliente</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>
+            3000
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>/cliente/FormListarCliente.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
